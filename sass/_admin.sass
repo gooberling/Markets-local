@@ -1,0 +1,107 @@
+//initial login view
+body.front, body.page-user 
+	//background: url(#{$themepath}/bg_reg.png) repeat-x white
+	color: $textcolor
+	font-size: 0.8em
+	line-height: 1em
+	padding-bottom: 0
+	border-bottom: 20px solid #0A7D92
+	.tabs
+		margin: 0 0 1em
+		overflow: hidden
+		li
+			float: left
+			margin-right: 1em
+			background: $blue
+			padding: 0.7em 1em
+			a, a:visited
+				color: white
+				text-decoration: none
+	#header, .main 
+		margin: 0 auto
+		width: 1000px
+		padding: 0 10px
+	#footer
+		width: 100%
+		height: 100px
+		background: #F3F3F3
+		+box-shadow( 0 0 3px 0 #DDDDDD inset)
+	.steps
+		display: none
+	a, a:visited
+		color: #0EBCDC	
+	.logo
+		margin-top: 60px
+		margin-bottom: 100px
+		position: relative
+		&:after
+			content: 'Registration Forms'
+			color: white
+			font-size: 42px
+			font-family: $titlefont
+			font-weight: 300
+			position: absolute
+			top: 8px
+			left: 110px
+
+	.node-links, .item-list
+		margin-top: 0.7em
+		li
+			float: left
+			margin-right: 0.4em
+	.item-list
+		margin-top: 4em
+		overflow: hidden
+	
+	h1, h1 a, h1 a:visited
+		color: #333
+		font-size: 1.45em
+		line-height: 1.05em
+		margin: 1.5em 0 0.7em
+		
+	.ptfrm, .steps, .warning, .legal
+		display: none
+		
+	.submitted
+		margin-bottom: 0.7em
+		color: #999
+		font-size: 0.9em
+body.page-user 
+	h1, h1 a, h1 a:visited
+		font-size: 2.5em
+	.item-list
+		margin-top: 1em
+		li
+			float: none
+			line-height: 1.3em
+	h3
+		margin: 0 0 0.9em
+		font-size: 1.5em
+	dl
+		margin: 0 0 1.5em
+
+#user-login
+	background: #eee
+	padding: 2em
+
+// admin views
+body.toolbar
+	background-position: 50% 65px
+	
+//#toolbar
+//	display: none
+
+body.logged-in
+	
+	fieldset.two, 
+	fieldset.three,
+	fieldset.risk,
+	fieldset.four
+		display: block
+	.ptfrm, .steps, input.next, input.prev
+		display: none !important
+	input.next.form-submit
+		display: block !important
+	
+		
+	

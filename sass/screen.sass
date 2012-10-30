@@ -1,0 +1,743 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import compass/reset
+@import compass/css3 
+
+// General
+
+$themepath: /profiles/cmc_installer/themes/cmc_registration_form/images
+$piepath: profiles/cmc_installer/themes/cmc_regform/css/pie //path to PIE css for IE 7-8 
+$titlefont: Ubuntu, "Trebuchet MS", Trebuchet, Arial, Helvetica, sans-serif
+$standardfont: Arial, Helvetica, sans-serif
+$textcolor: #5F6569
+$darkesttext: #1B242A
+$lightblue: #9CE5F7
+$blue: #1CA6CA
+$pink: #EC009C
+$grey-border: #BCC0C8
+@mixin textshadow
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7)
+@import "steps/*.png"
++all-steps-sprites
+
+// mixin for the CSS arrow after the image		
+@mixin liAfter
+	top: 100%
+	border: solid transparent
+	content: " "
+	height: 0
+	width: 0
+	position: absolute
+	pointer-events: none
+	border-color: rgba(136, 183, 213, 0)
+	border-top-color: #1B252B
+	border-width: 14px
+	left: 20%
+	
+// General
+
+
+body
+	font-family: $standardfont
+	font-size: 0.8em
+	line-height: 1em
+	padding-bottom: 3em
+
+body.front, body.front.cfd, body.page-user, body.page-user.cfd
+	background: url(#{$themepath}/bg_reg.png) repeat-x white 0 0
+	
+body.toolbar.front, body.toolbar.front.cfd, body.toolbar.page-user
+	background: url(#{$themepath}/bg_reg.png) repeat-x white 0 65px
+
+body.not-logged-in.toolbar.front, body.not-logged-in.toolbar.front.cfd
+	background-position: 0 0
+	
+body.cfd
+	background-image: url(#{$themepath}/bg_cfd.jpg) 
+	background-color: #031021 
+	background-position: 50% 0
+	background-repeat: no-repeat
+body.sb
+	background-image: url(#{$themepath}/bg_sb.jpg)
+	background-color: #031021 
+	background-position: 50% 0
+	background-repeat: no-repeat
+	
+
+.messages
+	padding: 30px 20px 15px
+	background-color: #89babe
+	color: #444
+	position: relative
+	z-index: 1
+	border: 2px solid white
+	border-bottom: 0
+	ul
+		margin-top: 0.4em
+	li
+		line-height: 1.2em
+		margin-bottom: 0.4em
+		margin-left: 25px
+		list-style: disc
+		
+.element-invisible
+	visibility: hidden
+p
+	line-height: 1.4em
+	margin-bottom: 0.75em
+a
+	color: white
+#header, #footer, .main
+	width: 880px
+	margin: 0 auto
+	+box-sizing(border-box)
+
+.logo 
+	margin-bottom: 3.2em
+	height: 48px
+strong
+	font-weight: bold
+	
+#header
+	padding-top: 55px
+	position: relative
+	overflow: visible
+	display: block
+	z-index: 0
+	margin-bottom: 40px
+
+#footer
+	color: white
+	margin-top: 3em
+	border-top: 1px dotted white
+	padding-top: 30px
+	font-size: 1em
+	position: relative
+	z-index: 1
+	h3
+		margin-bottom: 15px
+		font-size: 1.2em
+		
+.riskBg
+	background: url(#{$themepath}/bg_risk_ie.png)
+	background: rgba(2,19,36, 0.75)
+	position: fixed
+	width: 100%
+	height: 100%
+	z-index: 0
+	left: 0
+	top: 0
+	display: none
+	
+.main
+	z-index: 1
+		
+.ptfrm
+	width: 298px
+	height: 63px
+	background: url(#{$themepath}/platform.png) no-repeat
+	position: absolute
+	top: 227px
+	right: -7px
+	z-index: 3
+.reqd
+	position: absolute
+	top: 40px
+	right: 20px
+	font-size: 12px
+	span
+		color: red
+	
+h1
+	color: white
+	font-size: 3.4em
+	margin-top: 0px
+	font-family: $titlefont
+	font-weight: 300
+	line-height: 1em
+
+//.fieldset-description
+//	margin-bottom: 1em
+//	font-size:
+
+legend
+	font-size: 2em
+	padding-bottom: 0.4em
+	font-family: $titlefont
+	font-weight: 300
+	display: block
+	line-height: 1em
+	color: $darkesttext
+	border-bottom: 1px dotted #999
+	margin: 0 0 1.2em
+	width: 100%
+
+.hide-legend legend
+	display: none
+.show-legend legend
+	display: block
+	
+.bg
+	background: url(#{$themepath}/bg_form_ie.png)
+	background: rgba(255,255,255, 0.75)
+	border: 2px solid white	 
+	+box-sizing(border-box)
+	+border-radius(0 0 3px 3px)
+	position: relative
+	color: $textcolor
+	z-index: 1
+	
+// hidden fieldsets on page load
+
+fieldset.two, 
+fieldset.three,
+fieldset.risk,
+fieldset.four
+	display: none
+	
+// form elements
+fieldset
+	// a fix for chrome
+	padding: 1px !important 
+	fieldset 
+		margin-top: 0.7em
+		legend
+			font-size: 1.8em
+			margin-bottom: 0.8em
+
+fieldset.hide-legend
+	margin-top: 0
+	
+fieldset.start,
+fieldset.one,
+fieldset.risk,
+fieldset.two,
+fieldset.three,
+fieldset.four
+	margin: 30px 20px 15px
+
+fieldset.start
+	display: block !important
+
+label, .label
+	width: 50.5%
+	display: block
+	text-align: left
+	//margin-right: 20px
+	line-height: 1.2em
+	span
+		color: red
+		left: -9px
+		position: absolute
+		top: 0
+
+input 
+	+box-sizing(border-box)
+	padding: 5px
+input[type=radio]
+	margin: 0 0.6em 0 0
+	padding: 0
+input[type=text], textarea, input[type="password"], input[type=tel]
+	border: 1px solid #aaa
+	+transition(all 0.2s ease-in)
+
+input[type=text]:hover, input[type=text]:active, 
+input[type=tel]:hover, input[type=tel]:active, 
+input[type=password]:hover, input[type=password]:active
+	+box-shadow(0px 0px 3px rgba(0, 0, 0, 0.25) inset)
+	+transition(all 0.2s ease-in)
+
+input[type="checkbox"]
+	padding: 0
+
+select
+	margin-top: 0.3em
+	padding: 0.3em
+	font-size: 0.9em
+	
+// for chrome and Safari
+@media screen and (-webkit-min-device-pixel-ratio:0) 
+	select	
+		-webkit-appearance: none
+		+background(image-url("#{$themepath}/bg_slt_aro.png") no-repeat center right, linear-gradient(#fff, #ccc))
+		border: 1px solid #aaa
+		text-indent: 7px
+
+select, textarea, input[type=text], input[type=password], .form-radios, input[type=tel]
+	width: 50.5%
+	+box-sizing(border-box)
+	
+.fgtpass
+	margin-top: -1em
+	a, a:visited
+		color: $blue
+		+background(image-url("#{$themepath}/aro-l.png") no-repeat center left)
+		padding-left: 10px
+		&:hover
+			color: #333
+			text-decoration: none
+	
+// icons and descriptions
+.icon
+	background-image: url(#{$themepath}/bg_validation.png)
+	background-repeat: no-repeat
+	background-position: left bottom
+	width: 19px
+	height: 19px
+	position: absolute
+	left: 0
+	top: 0.6em
+
+.valid .icon
+	background-position: 0 0
+
+.holder
+	position: relative
+	
+.aside
+	position: absolute
+	top: 0
+	right: 0
+	width: 400px
+	+box-sizing(border-box)
+	padding-left: 35px
+	display: none
+
+	
+.desc
+	background: $blue
+	+box-sizing(border-box)
+	+border-radius(3px)
+	padding: 9px 12px 1px 12px
+	color: white
+	font-size: 0.9em
+	position: relative
+	width: 100%
+	span
+		position: absolute
+		top: 10px
+		left: -10px
+		border-bottom: 7px dashed transparent
+		border-right: 12px solid $blue
+		border-top: 7px dashed transparent
+		font-size: 0
+		line-height: 0
+		width: 0
+	ul
+		margin-bottom: 1em
+		margin-top: -0.5em
+		li
+			margin-bottom: 0.5em
+			line-height: 1.2em
+			list-style: disc
+			padding-left: 0.5em
+			margin-left: 1em
+
+.error 
+	.desc
+		background: $pink
+		span
+			border-right-color: $pink
+	.icon
+		background-position: 0 -19px
+	label, .label
+		color: $pink
+	input[type=text], input[type=password], input[type=tel]
+		border: 1px solid $pink
+	input[type=text]:hover, input[type=text]:active, 
+	input[type=password]:hover, input[type=password]:active,  
+	input[type=tel]:hover, input[type=tel]:active
+		+box-shadow(0px 0px 3px rgba(236, 0, 156, 0.5) inset)
+	select
+		color: $pink
+		
+
+	
+.steps
+	position: relative
+	z-index: 2
+	height: 65px
+	//margin-bottom: -16px
+	//+transition(all 0.5s ease-in)
+	//ul
+		
+	li
+		height: 65px
+		+box-sizing(border-box)
+		padding: 14px 25px 0 10px
+		float: left
+		display: inline
+		width: 24%
+		font-size: 1.2em
+		color: white
+		line-height: 1.2em
+		margin-left: 1.333%
+		@extend .steps-sprite
+		background-position: right -137px
+		+border-radius(3px 3px 0 0)
+		position: relative
+		.txt
+			position: relative
+			z-index: 1
+		.aro
+			@extend .steps-sprite
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			+border-radius(3px 3px 0 0)
+			background-position: right -72px
+			z-index: 0
+			display: none
+		span
+			font-weight: bold
+			display: block
+			&:after
+				padding: 0 3px
+	li:first-child
+		margin-left: 0
+	li.one
+		span:after
+			content: '1'
+	li.two
+		span:after
+			content: '2'
+	li.three
+		span:after
+			content: '3'			
+	li.four
+		background-position: 0 -137px
+		.aro
+			background-position: 0 -72px
+		span:after
+			content: '4'
+			
+
+.one .steps li.one .aro
+	display: block
+	
+.one .steps li.one,
+.two .steps li.two,
+.three .steps li.three,
+.four .steps li.four 
+	&:after
+		+liAfter
+
+.risk .steps li.one, .two .steps li.one, .three .steps li.one, .four .steps li.one 
+	.aro
+		display: block
+
+
+// onboarding page		
+//.page-onboarding
+//	.steps
+//		display: none
+//	#header
+//		z-index: 2
+//	.ptfrm
+//		top: 227px
+//		right: -8px
+//	.next
+//		display: block
+#edit-go
+	display: block
+// form
+
+
+//.form-item:after, 
+.row:after, .title:after
+
+	content: "."
+	display: block
+	clear: both
+	visibility: hidden
+	line-height: 0
+	height: 0
+	
+	//.form-item,
+.row, .field-grp.rdo,  .title
+
+	margin-bottom: 1.5em
+	clear: both
+	display: inline-block
+	width: 100%
+	position: relative
+	
+
+.title .row,
+.title .row:after,
+.row .row:after,
+.row .row
+	content: ""
+	display: inline
+	clear: none	
+	width: auto
+	margin-bottom: 0
+
+.hidden
+	display: none
+
+.field-grp
+	position: relative
+	margin-bottom: 0.7em
+	.row
+		margin-bottom: 0.7em
+.field-header
+	color: #222
+	margin: 0 0 0.7em
+	width: 50%
+	line-height: 1.05em
+	font-size: 1.1em
+	span
+		color: red
+.field-grp .radios
+	margin-bottom: 0em
+
+input[type=text], input[type=password], input[type=tel]
+	margin-top: 0.3em
+		
+.form-radios
+	line-height: 1.8em
+	float: left
+	margin-top: 0.8em
+	div:first-child
+		display: none
+	div
+		float: left
+		margin-right: 0.5em
+		label
+			float: left
+			width: auto
+			line-height: 1em
+		input
+			float: left
+.start .form-radios div:first-child
+	display: block
+			
+#edit-already-registered.form-radios div:first-child
+	display: inline
+			
+.rdo-vrt
+	.form-radios
+		margin-top: 0.4em
+		div
+			float: left
+			margin-right: 0
+			clear: both
+			overflow: hidden
+			position: relative
+			padding-left: 25px
+			padding-top: 0.1em
+			margin-top: 0.4em
+			label
+				float: none
+				width: auto
+				line-height: 1.4em
+			input
+				position: absolute
+				left: 1px
+				top: 0
+				margin: 0.4em 0.6em 0 0
+		
+.rdo-mlt-ln
+	.form-radios
+		margin-top: 0.5em
+.dob, .expire-date
+	.select
+		float: left
+		width: 16%
+		float: left
+		margin-right: 1%
+		label
+			width: auto
+	select
+		width: 100%
+		
+
+.title
+	select
+		width: 33.3%
+		float: left
+		margin-right: 1%
+	div:first-child select
+		margin-left: 0
+		width: 16%
+
+.txt.bank
+	label
+		float: none
+		width: auto
+		display: block
+		text-align: left 
+		margin: 0 0 4px 1px
+	//.label
+	//		padding-top: 23px
+	.input
+		float: left
+		margin-right: 20px
+		&:after
+			content: ':'
+			color: #000
+			font-weight: bold
+			padding-left: 13px			
+	input[type="text"]
+		margin-top: 0
+	.one
+		input
+			width: 32px
+	.two
+		input
+			width: 43px
+	.three
+		input
+			width: 65px
+	.four
+		margin-right: 0
+		input
+			width: 37px
+		&:after
+			content: ''
+			padding: 0
+		
+.dec
+	background: url(#{$themepath}/bg_form_ie_05.png)
+	background: rgba(255,255,255, 0.5)
+	padding: 1.7em 1.5em 1.5em
+	margin-bottom: 2em
+	+border-radius(2px)
+	+box-sizing(border-box)
+	//width: 70%
+	h2
+		font-size: 1.6em
+		line-height: 1em
+		margin-bottom: 0.5em
+		color: #333
+		font-family: $titlefont
+		color: $blue
+		font-weight: 300
+	.agree
+		background: white
+		overflow: hidden
+		padding: 1em
+	label,
+	input[type="checkbox"]
+		float: left
+		text-align: left
+		color: #000
+		margin: 2px 10px 0 0
+	
+	label
+		width: 90%
+		margin-right: 0px
+	.aside
+		width: 275px
+		right: -285px
+		bottom: 1.7em
+		top: auto
+	.desc
+		width: 240px
+	.row
+		margin: 0
+.scroll
+	height: 400px
+	overflow: auto
+	border: 1px solid #ccc
+	margin-bottom: 1em
+	padding: 1em
+	background: url(#{$themepath}/bg_form_ie_05.png)
+	background: rgba(255,255,255, 0.5)
+	+box-shadow(0 0 3px #CCCCCC inset)
+	+border-radius(2px)
+	+box-sizing(border-box)
+	
+
+// submit buttons 	
+.row.rb
+	margin-top: 2.9em
+	font-size: 14px
+	z-index: 2
+	#wait
+		position: absolute
+		right: 120px
+		top: 13px
+		text-align: right
+		color: $pink
+		font-size: 0.85em
+	input
+		border: 0
+		padding: 12px 35px 9px
+		+border-radius(2px)
+		+transition(all 0.2s ease-in)
+		font-size: 1em
+.next
+	float: right
+	background: $blue
+	color: #fff
+	display: none
+	&:hover
+		background: #168FAF
+		+transition(all 0.2s ease-in)
+		cursor: hand
+		cursor: pointer
+.prev
+	float: left
+	color: #fff
+	background: #666
+	display: none
+	&:hover
+		background: #555
+		+transition(all 0.2s ease-in)
+		cursor: hand
+		cursor: pointer
+.one #next-one, .risk #next-risk, .two #next-two, .three #next-three, .four #edit-submit,
+.risk #prev-risk, .two #prev-two, .three #prev-three, .four #prev-four
+	display: block
+	
+// risk
+body.risk
+	.ptfrm
+		display: none
+	legend
+		margin-bottom: 0
+	.row.rb .prev
+		opacity: 0.4
+		&:hover
+			opacity: 1
+	.row.rb .next
+		+box-shadow(0 0 3px #344152)
+		+transition(all 0.2s ease-in)
+		&:hover
+			opacity: 1
+			+box-shadow(0 0 6px #000)
+			+transition(all 0.2s ease-in)
+	.dec
+		background: none
+		padding: 1.7em 0 0
+		+border-radius(0)
+	
+		.scroll
+			+box-shadow(0 0 3px 0 #333 inset)
+			background: white
+	
+		
+// end risk
+	
+// layout for admin pages
+@import admin
+
+// for tablets import narrower css and set variables
+@media screen and	 (min-width : 700px) and (max-width : 880px)
+	@import tablet
+
+// for smartphone import narrower css and set variables
+@media screen and (min-width : 250px) and (max-width : 699px)
+	@import smartphone
+	
+// app styling
+@import app
+
+

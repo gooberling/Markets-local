@@ -1,0 +1,190 @@
+body.cfd.inapp
+	+background(image-url("#{$themepath}/app-bg_across_cfd.gif") repeat-x, image-url("#{$themepath}/app-bg_all.gif") repeat, black)
+body.sb.inapp
+	+background(image-url("#{$themepath}/app-bg_across_sb1.gif") repeat-x, image-url("#{$themepath}/app-bg_all.gif") repeat, black)
+	
+body.cfd.inapp h1
+	background: -webkit-gradient(linear, 0 0, 0 95%, from(white), to(#b8b01d))
+	-webkit-background-clip: text
+	-webkit-text-fill-color: transparent
+	
+body.sb.inapp h1
+	background: -webkit-gradient(linear, 0 0, 0 95%, from(#fff), to(#c959b1))
+	-webkit-background-clip: text
+	-webkit-text-fill-color: transparent
+
+
+body.inapp
+	color: white
+	.logo, .ptfrm
+		display: none
+	#footer
+		border: 0
+	h1
+		border-bottom: solid 1px rgba(255, 255, 255, 0.5)
+		padding-bottom: 10px
+		text-shadow: 0px 0px 0px transparent
+		line-height: 1.1em
+		
+	.bg
+		background: none
+		color: #abb5c0
+		+textshadow
+		border: 0
+		margin: 0 2%
+		
+	fieldset.one, fieldset.risk, fieldset.two, fieldset.three, fieldset.four
+		margin: 0
+	label, .label
+		margin-bottom: 0.3em
+	
+	.reqd 
+		top: 5px
+	
+	legend
+		color: white
+		padding-top: 0.9em
+
+		+textshadow
+	.steps
+		border-bottom: solid 1px rgba(255, 255, 255, 0.5)
+		margin-bottom: 0.5em
+		li.one span:after
+			content: ' 1 - '
+		li.two span:after
+			content: ' 2 - '
+		li.three span:after
+			content: ' 3 - '			
+		li.four span:after
+			content: ' 4 - '
+	.field-grp .header
+		color: white
+	input
+		text-shadow: none
+		border: 0px 
+		background: rgba(0, 51, 65, 0.7)
+		border-bottom: 1px solid rgba(255, 255, 255, 0.4)
+		border-top: 1px solid rgba(0, 0, 0, 0.4)
+		color: white
+		padding: 0.6em
+	input.next
+		background: $blue
+		+box-shadow(0 0 4px #111)
+		border: 0
+	input.prev
+		background: #666
+		+box-shadow(0 0 4px #111)
+		border: 0
+	select
+		border: 0
+		color: white
+		background: url("#{$themepath}/bg_slt_aro.png") no-repeat center right,  -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgba(34, 74, 87, 0.5)), color-stop(45%, rgba(30, 54, 64, 0.75)), color-stop(100%, #1b242a))
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.8), inset 0 -1px 0px rgba(255, 255, 255, 0.3)
+		padding: 0.7em 0.2em
+	.dec
+		background: rgba(255, 255, 255, 0.2)
+		.agree
+			background: rgba(255, 255, 255, 0.1)
+			label
+				color: white
+	.scroll
+		background: rgba(255, 255, 255, 0.2)
+		text-shadow: none
+		+box-shadow(0 0 3px #000 inset)
+		border: 1px solid #000
+		color: black
+	.txt.bank .input:after
+		color: #fff
+	.row.rb
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(7%, #3f3f3f), color-stop(32%, #262626), color-stop(67%, #262626), color-stop(95%, #303030))
+		width: 100%
+		margin: 2.9em 0 0
+		padding: 0.5em 2% 0.7em
+		+box-sizing(border-box)
+		border: 1px solid black
+		border-width: 1px 0
+		border-color: #565656 black black
+		#wait
+			right: 1em
+			top: 55px
+body.inapp.risk
+	.bg
+		+box-shadow(none)	
+	.riskBg, .steps, .prev
+		display: none !important
+	.dec
+		background: none
+		padding: 1.7em 0 0
+		+border-radius(0)
+		//margin-bottom: 0
+		.scroll
+			background: url(#{$themepath}/bg_form_ie_05.png)
+			background: rgba(255,255,255, 0.5)
+		
+		
+// for in App iPad -- and (max-width : 1024px)
+@media screen and (min-width : 700px) and (max-width : 1024px)
+	// steps markers
+
+	body.inapp
+		#header, #footer, .main
+			width: 96%
+			margin: 0 2%
+		.main
+			margin-top: 2em
+		#header
+			padding-top: 15px
+		.bg
+			padding: 0
+			margin: 0
+		.steps
+			margin-top: 1em
+			margin-bottom: 2em
+			padding-bottom: 0
+			border-bottom: solid 5px #1b242a
+			height: auto
+			overflow: hidden
+			li
+				height: auto
+				+border-radius(3px 3px 0 0)
+				//background: rgba(255,255,255,0.3)
+				padding: 1.5% 2% 1.5% 1%
+				width: 24%
+				margin-right: 0%
+			//li.visit, li.active
+				//background:  -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgba(34, 74, 87, 0.75)), color-stop(45%, rgba(30, 54, 64, 0.75)), color-stop(100%, #1b242a))
+			//	border-top: 1px solid rgba(255, 255, 255, 0.2)
+			li:after,  li:before, li.active::before
+				position: relative
+				border-width: 0
+			span:after
+				content: '>'
+				margin-left: 5px
+				font-weight: normal
+			li.one
+				span:after
+					content: '1'
+			li.two
+				span:after
+					content: '2'
+			li.three
+				span:after
+					content: '3'			
+			li.four
+				span:after
+					content: '4'
+			
+		.reqd
+			top: -14px
+			right: 0
+
+		.aside
+			width: 48%
+			.desc
+				width: 100%
+				text-shadow: none
+		.dec .aside
+			width: 275px
+		.row.rb
+			width: 104%
+			margin: 2.9em -2% 0

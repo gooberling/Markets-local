@@ -1,0 +1,100 @@
+
+body
+	font-size: 0.8em
+	line-height: 1em
+	padding-bottom: 3em
+	background-size: 175% auto
+	background-position: 40% 0
+	
+.ptfrm
+	display: none
+
+#header, #footer, .main
+	width: 96%
+	margin: 0 2%
+#header
+	padding-top: 2em
+	
+.logo 
+	margin-bottom: 4%
+
+		
+#footer
+	margin: 0 1%
+	width: 98%
+.row.rb
+	padding-bottom: 2em
+
+h1 
+	font-size: 2.8em
+
+.steps 
+	margin-top: 3%
+	font-size: 0.825em
+	height: 5em
+	margin-bottom: -2px
+	overflow: hidden
+	ul
+		overflow: visible
+	li
+		height: auto
+		+border-radius(3px 3px 0 0)
+		background: rgba(255,255,255, 0.3)
+		padding: 1.5% 2% 1.5% 1%
+		position: relative
+		padding-right: 0
+		.aro
+			top: -12%
+			height: 106%
+		
+	li.four
+		width: 24%
+		margin-right: 0
+		+border-radius(3px 3px 0 0)
+
+.one .steps li.one, .risk .steps li.one, 
+.two .steps li.one, .two .steps	li.two, 
+.three .steps li.one, .three .steps li.two, 
+.three .steps li.three, .four .steps li.one, 
+.four .steps li.two, .four .steps li.three
+	background: none
+		
+	//background: url(#{$themepath}/steps/bg_step_active.png) right 50% no-repeat
+		height: auto
+.four .steps li.four
+	//background: url(#{$themepath}/steps/bg_step_active.png) left center no-repeat
+	height: auto
+
+.aside	
+	width: 48%
+	right: 0%	
+		
+.dec label
+	width: 90%
+	
+.dec .aside
+	width: 44%
+	right: -45%
+
+.reqd 
+	top: 14px
+	
+legend 
+	font-size: 1.7em
+
+fieldset.one, fieldset.risk, fieldset.two, fieldset.three, fieldset.four
+	margin: 4% 2% 0
+	
+input
+	padding: 0.6em
+
+select
+	padding: 0.4em 0.2em
+	
+label, .label
+	font-size: 0.9em
+	font-size: 0.9em
+	line-height: 1.4em
+	
+.field-grp .rdo.mlt-ln .form-radios
+	margin-left: 28%

@@ -1,0 +1,51 @@
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmcmarkets\/Documents\/CMC_git\/code\/profiles\/cmc_installer\/themes\/cmc_registration\/sass\/ie\.sass}line{font-family:\000039}}
+.ie .rdo-vrt .radios div input {
+  top: -5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmcmarkets\/Documents\/CMC_git\/code\/profiles\/cmc_installer\/themes\/cmc_registration\/sass\/ie\.sass}line{font-family:\0000313}}
+.lt-ie8 .steps {
+  margin-left: -10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmcmarkets\/Documents\/CMC_git\/code\/profiles\/cmc_installer\/themes\/cmc_registration\/sass\/ie\.sass}line{font-family:\0000315}}
+.lt-ie8 .steps li {
+  width: 178px;
+  margin-left: 1%;
+  height: 67px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmcmarkets\/Documents\/CMC_git\/code\/profiles\/cmc_installer\/themes\/cmc_registration\/sass\/ie\.sass}line{font-family:\0000319}}
+.lt-ie8 .aside {
+  right: -10px;
+  width: 355px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmcmarkets\/Documents\/CMC_git\/code\/profiles\/cmc_installer\/themes\/cmc_registration\/sass\/ie\.sass}line{font-family:\0000322}}
+.lt-ie8 .desc {
+  width: 321px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmcmarkets\/Documents\/CMC_git\/code\/profiles\/cmc_installer\/themes\/cmc_registration\/sass\/ie\.sass}line{font-family:\0000324}}
+.lt-ie8 .dec {
+  width: 95%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmcmarkets\/Documents\/CMC_git\/code\/profiles\/cmc_installer\/themes\/cmc_registration\/sass\/ie\.sass}line{font-family:\0000326}}
+.lt-ie8 fieldset {
+  display: block;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmcmarkets\/Documents\/CMC_git\/code\/profiles\/cmc_installer\/themes\/cmc_registration\/sass\/ie\.sass}line{font-family:\0000329}}
+.lt-ie8 .radios div label {
+  line-height: 1.5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmcmarkets\/Documents\/CMC_git\/code\/profiles\/cmc_installer\/themes\/cmc_registration\/sass\/ie\.sass}line{font-family:\0000331}}
+.lt-ie8 .rdo-vrt .radios div {
+  overflow: visible;
+  float: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmcmarkets\/Documents\/CMC_git\/code\/profiles\/cmc_installer\/themes\/cmc_registration\/sass\/ie\.sass}line{font-family:\0000334}}
+.lt-ie8 .rdo-vrt .radios div input {
+  top: -5px;
+}

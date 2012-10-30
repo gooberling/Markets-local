@@ -1,0 +1,39 @@
+name        = CMC Registration Forms for Crossborder
+description = CMC Markets Registration Forms for Crossborder, SR and IRI
+version			= 0.2
+core        = 7.x
+engine      = phptemplate
+screenshot  = screenshot.png
+
+
+stylesheets[all][] = stylesheets/screen.css
+stylesheets[all][] = stylesheets/ie.css
+
+;KILL THESE DEFAULT STYLESHEETS:
+stylesheets[all][] = ctools.css
+stylesheets[all][] = field.css
+stylesheets[all][] = node.css
+stylesheets[all][] = search.css
+;stylesheets[all][] = system.base.css
+stylesheets[all][] = system.theme.css
+stylesheets[all][] = system.menus.css
+stylesheets[all][] = system.messages.css
+stylesheets[all][] = user.css
+stylesheets[all][] = views.css
+
+;Theme scripts	
+scripts[] = js/cmc_form_validation.js
+scripts[] = js/easing.js
+scripts[] = js/cmc_form_transition.js
+
+
+regions[header] = Header
+regions[navigation] = Navigation
+regions[content] = Content
+regions[risk] = Risk Warning
+regions[footer] = Footer
+
+
+
+
+
